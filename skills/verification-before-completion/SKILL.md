@@ -29,10 +29,12 @@ BEFORE claiming any status or expressing satisfaction:
 1. IDENTIFY: What command proves this claim?
 2. RUN: Execute the FULL command (fresh, complete)
 3. READ: Full output, check exit code, count failures
-4. VERIFY: Does output confirm the claim?
+4. ARCHITECTURE CHECK: Are any of the newly modified files exceeding 300 LOC? Do they violate layered architecture?
+   - If YES: Stop. Refactor and extract to a new file.
+5. VERIFY: Does output confirm the claim?
    - If NO: State actual status with evidence
    - If YES: State claim WITH evidence
-5. ONLY THEN: Make the claim
+6. ONLY THEN: Make the claim and perform your atomic `feat/fix/chore` commit on the isolated branch.
 
 Skip any step = lying, not verifying
 ```

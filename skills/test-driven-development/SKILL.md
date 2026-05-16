@@ -188,6 +188,7 @@ After green only:
 - Remove duplication
 - Improve names
 - Extract helpers
+- **ANTI-GOD-FILE RULE:** If the code you just added pushes a file near the 250-300 LOC limit, extract the logic into a new, separate file immediately.
 
 Keep tests green. Don't add behavior.
 

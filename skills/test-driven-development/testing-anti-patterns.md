@@ -297,3 +297,16 @@ TDD cycle:
 If TDD reveals you're testing mock behavior, you've gone wrong.
 
 Fix: Test real behavior or question why you're mocking at all.
+
+## Anti-Pattern 5: The "God Test" File
+
+**The violation:**
+Packing logic to test 40 different scenarios into a single 1500-line test file (`user.test.ts`), creating a monolithic block that is impenetrable and hard to maintain without breaking scope.
+
+**Why this is wrong:**
+- Test files suffer from bloat the same way production code does.
+- Huge test files lose semantic focus and merge separate concerns into a giant dumping ground.
+- It becomes impossible to trace component bounds when all integrations are tested in one location.
+
+**The fix:**
+Keep test files under 250-300 LOC limit as well. Split tests by context or test group. (e.g., `user-auth.test.ts`, `user-billing.test.ts`, `user-profile.test.ts`).

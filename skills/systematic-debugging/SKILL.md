@@ -171,32 +171,36 @@ You MUST complete each phase before proceeding to the next.
 
 **Fix the root cause, not the symptom:**
 
-1. **Create Failing Test Case**
+1. **Working Environment**
+   - Ensure you are working on an isolated `YYYY-MM-DD-bugfix-name` branch, NOT `main` or `master`. Create one if needed.
+   
+2. **Create Failing Test Case**
    - Simplest possible reproduction
    - Automated test if possible
    - One-off test script if no framework
    - MUST have before fixing
    - Use the `superpowers:test-driven-development` skill for writing proper failing tests
 
-2. **Implement Single Fix**
+3. **Implement Single Fix**
    - Address the root cause identified
    - ONE change at a time
-   - No "while I'm here" improvements
-   - No bundled refactoring
+   - Do not bloat files: If fixing the bug means adding significant logic to an already large file (>250-300 lines), extract the logic into a new, single-responsibility file (e.g., a helper or a completely new module).
+   - No bundled unrelated refactoring ("while I'm here" improvements).
 
-3. **Verify Fix**
+4. **Verify and Commit**
    - Test passes now?
    - No other tests broken?
-   - Issue actually resolved?
+   - Make an atomic commit for this specific fix (e.g., `fix: address specific root cause...`). This allows a clean `git revert` if your hypothesis was wrong.
 
-4. **If Fix Doesn't Work**
+5. **If Fix Doesn't Work**
    - STOP
+   - Revert your atomic commit.
    - Count: How many fixes have you tried?
    - If < 3: Return to Phase 1, re-analyze with new information
-   - **If ≥ 3: STOP and question the architecture (step 5 below)**
+   - **If ≥ 3: STOP and question the architecture (step 6 below)**
    - DON'T attempt Fix #4 without architectural discussion
 
-5. **If 3+ Fixes Failed: Question Architecture**
+6. **If 3+ Fixes Failed: Question Architecture**
 
    **Pattern indicating architectural problem:**
    - Each fix reveals new shared state/coupling/problem in different place

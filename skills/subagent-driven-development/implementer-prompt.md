@@ -32,7 +32,7 @@ Task tool (general-purpose):
     1. Implement exactly what the task specifies
     2. Write tests (following TDD if task says to)
     3. Verify implementation works
-    4. Commit your work
+    4. Commit your work (Create an atomic commit for this specific task so it can be rolled back easily. Format: `feat: task N - description`)
     5. Self-review (see below)
     6. Report back
 
@@ -41,18 +41,18 @@ Task tool (general-purpose):
     **While you work:** If you encounter something unexpected or unclear, **ask questions**.
     It's always OK to pause and clarify. Don't guess or make assumptions.
 
-    ## Code Organization
+    **Before Starting Code:** Ensure you are working on a new branch named with the full day and date (e.g., `Monday-March-18-2026-feature-name`) to isolate your work. If you are on `main` or `master`, do NOT start coding. Create the feature branch first.
 
-    You reason best about code you can hold in context at once, and your edits are more
-    reliable when files are focused. Keep this in mind:
-    - Follow the file structure defined in the plan
-    - Each file should have one clear responsibility with a well-defined interface
-    - If a file you're creating is growing beyond the plan's intent, stop and report
-      it as DONE_WITH_CONCERNS — don't split files on your own without plan guidance
-    - If an existing file you're modifying is already large or tangled, work carefully
-      and note it as a concern in your report
-    - In existing codebases, follow established patterns. Improve code you're touching
-      the way a good developer would, but don't restructure things outside your task.
+    ## Code Organization & Strict Coding Standards
+
+    **You must follow these industry-standard coding rules strictly:**
+    - **Idiomatic Code:** Write idiomatic code (e.g., functional programming, early returns, destructuring in JS/TS; list comprehensions in Python). Use iterators and built-in array methods instead of manual loops or redundant hardcoded elements.
+    - **Layered Architecture Mandate:** Always separate concerns. For frontend, separate state/logic (`hooks/`, `utils/`) from presentation (`components/`). For backend, separate routing/controllers from business logic (`services/`) and data access (`repositories/`, `models/`).
+    - **The Scout Rule:** Leave the codebase cleaner than you found it. Keep files under 250-300 lines. If editing an existing massive file, break off the piece you are working on into a separate file if possible.
+    - **Small Focused Files:** You reason best about code you can hold in context at once, and your edits are more reliable when files are focused. 
+    - **Adhere to the Plan:** Follow the file structure defined in the plan. Each file should have one clear responsibility.
+    - If a file you're creating is growing beyond the plan's intent or exceeding 300 lines, stop and report it as DONE_WITH_CONCERNS — don't split files arbitrarily if it completely breaks plan structure, but flag it prominently.
+    - In existing codebases, follow established patterns but do not perpetuate God files. Improve code you're touching the way a good developer would.
 
     ## When You're in Over Your Head
 

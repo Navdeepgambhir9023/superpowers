@@ -60,7 +60,7 @@ Each domain is independent - fixing tool approval doesn't affect abort tests.
 Each agent gets:
 - **Specific scope:** One test file or subsystem
 - **Clear goal:** Make these tests pass
-- **Constraints:** Don't change other code
+- **Constraints:** Explicitly enforce codebase rules: "Do NOT exceed 300 LOC per file", "Do NOT violate layered architecture", "Commit atomically".
 - **Expected output:** Summary of what you found and fixed
 
 ### 3. Dispatch in Parallel
