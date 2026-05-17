@@ -28,6 +28,7 @@ For each task:
 2. Follow each step exactly (plan has bite-sized steps)
 3. Run verifications as specified
 4. Mark as completed
+5. **CRITICAL TRACKING UPDATE**: Upon completing a phase/task, write to `tracking.md` check off the corresponding task checkbox before starting the next phase file.
 
 ### Step 3: Complete Development
 
@@ -64,7 +65,6 @@ After all tasks complete and verified:
 
 ## Integration
 
-**Required workflow skills:**
-- **superpowers:using-git-worktrees** - Ensures isolated workspace (creates one or verifies existing)
+**Required workfusing-git-worktrees** - Ensures isolated workspace (creates one or verifies existing)
 - **superpowers:writing-plans** - Creates the plan this skill executes
 - **superpowers:finishing-a-development-branch** - Complete development after all tasks

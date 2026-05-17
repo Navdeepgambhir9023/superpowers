@@ -22,6 +22,7 @@ Assume they are a skilled developer, but know almost nothing about our toolset o
 **Save plans to:** A dedicated directory at `docs/nd/plans/Full Day & Date(for eg. Monday-March-18-2026 note. Do not keep spaces in dates use "-")-<topic>-plan/`
 - Break the plan into smaller, manageable chunks (maximum 10 files).
 - `00-overview.md`: Contains the Goals, Architecture, Tech Stack, and links/index of the phases.
+- `tracking.md`: A strict markdown checklist to track completion status. Contains links to all phases and their sub-tasks.
 - `01-<phase-name>.md`, `02-<phase-name>.md`, etc.: Phase-wise or feature-wise task checklists.
 - (User preferences for plan location override this default directory)
 

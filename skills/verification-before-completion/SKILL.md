@@ -31,10 +31,12 @@ BEFORE claiming any status or expressing satisfaction:
 3. READ: Full output, check exit code, count failures
 4. ARCHITECTURE CHECK: Are any of the newly modified files exceeding 300 LOC? Do they violate layered architecture?
    - If YES: Stop. Refactor and extract to a new file.
-5. VERIFY: Does output confirm the claim?
+5. TRACKING CHECK: Has the completion of this logical unit been officially checked off in the `tracking.md` file?
+   - If NO: Stop. Update `tracking.md`.
+6. VERIFY: Does output confirm the claim?
    - If NO: State actual status with evidence
    - If YES: State claim WITH evidence
-6. ONLY THEN: Make the claim and perform your atomic `feat/fix/chore` commit on the isolated branch.
+7. ONLY THEN: Make the claim and perform your atomic `feat/fix/chore` commit on the isolated branch.
 
 Skip any step = lying, not verifying
 ```
