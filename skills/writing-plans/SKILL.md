@@ -30,6 +30,9 @@ Assume they are a skilled developer, but know almost nothing about our toolset o
 
 If the spec covers multiple independent subsystems, it should have been broken into sub-project specs during brainstorming. If it wasn't, suggest breaking this into separate plans — one per subsystem. Each plan should produce working, testable software on its own.
 
+## Global Rules Check
+Before writing the plan, verify if a `CLAUDE.md` file exists in the repository root containing our non-negotiable architectural mandates (like the <300 LOC rule and atomic commits). If it doesn't, pause and suggest executing the `superpowers:generating-project-rules` skill to establish global AI guardrails before writing the plan.
+
 ## File Structure & Decomposition Standards
 
 Before defining tasks, map out which files will be created or modified and what each one is responsible for. This is where decomposition decisions get locked in.
